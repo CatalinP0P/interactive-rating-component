@@ -1,0 +1,125 @@
+@import "./variables.scss";
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $dark-blue;
+}
+
+.card {
+    padding: 2rem 1.5rem;
+    width: 88%;
+    max-width: 25rem;
+    background: linear-gradient(to bottom, #212832, #171e28);
+    color: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &.center {
+        align-items: center;
+        text-align: center;
+    }
+
+    .card__icon__container {
+        background-color: #29313f;
+        height: 2.5rem;
+        width: 2.5rem;
+        display: flex ;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        border-radius: 100rem;
+    }
+
+    .card__title{
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 1.5rem;
+    }
+
+    .card__text {
+        opacity: 40%;
+        font-size: .85rem;
+        line-height: 150%;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .card__text {
+            font-size: .9rem
+        }
+    }
+
+    .rating__row {
+        width: 100%;
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: .25rem;
+
+        .rating__row__item {
+            background-color: #29313f;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            height: 2.75rem;
+            width:2.75rem;
+            border-radius: 2.5rem;
+
+            label {
+                transform: translateY(15%);
+                opacity: 40%
+            }
+
+            &.selected
+            {
+                background-color: $light-gray;
+                
+                label {
+                    opacity: 100% 
+                }
+            }
+
+            &:hover
+            {
+                background-color: $primary;
+                cursor: pointer;
+
+                label {
+                    opacity: 100% 
+                }
+            }
+        }
+
+    }
+    .card__button
+    {
+        background-color: $primary;
+        border: none;
+        margin-top: 1rem;
+        border-radius: 4rem;
+        padding: 1rem 1.5rem;
+        letter-spacing: .2rem;
+        color: white;
+        box-shadow: 5px 0px 10px 2px rgba(0,0,0, .05);
+        cursor: pointer;
+
+        &:hover {
+            background-color: white;
+            color: $primary
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        padding: 2rem
+    }
+}
+
